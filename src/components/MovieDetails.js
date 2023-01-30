@@ -57,7 +57,7 @@ const MovieDetails = () => {
     return (
         <div className="cont">
             <div className="img-container">
-                <img src={data?.data?.image.medium} className="img" />
+                <img src={data?.data?.image?.medium} className="img" />
             </div>
             <div className="movie-details-container">
                 <div className="movie-name-container">
@@ -65,7 +65,7 @@ const MovieDetails = () => {
                     <span className="d-flex align-items-center gap-2 fs-5">Rantings :  {data?.data?.rating.average ?
                         <div className="d-flex justify-content-between align-items-center gap-1">
                             <i className='bx bxs-star star'></i>
-                            <span>{data?.data?.rating.average}</span>
+                            <span>{data?.data?.rating?.average}</span>
                         </div>
                         :
                         <div className="d-flex justify-content-between align-items-center gap-1">
@@ -100,7 +100,7 @@ const MovieDetails = () => {
                 </Modal.Header>
                 <Modal.Body className="d-flex gap-3 align-items-start w-100 flex-wrap">
                     <div className="">
-                        <img src={data?.data.image.medium} className="" />
+                        <img src={data?.data?.image?.medium} className="" />
                     </div>
                     <div className="d-flex justify-content-center flex-column fs-5">
                         <span>Movie Name : {data?.data?.name}</span>

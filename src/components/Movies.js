@@ -19,20 +19,21 @@ const Movies = () => {
 
     return (
         <div className="movie">
-            {data?.data.map((item, idx) => {
+            {data?.data?.map((item, idx) => {
                 const { name, id, rating, image } = item?.show
+                console.log(item)
                 return (
                     <Card className="movie-card bg-dark text-white p-2" key={idx}>
-                        <Card.Img variant="top" src={image.medium} />
+                        <Card.Img variant="top" src={image?.medium} />
                         <div className="mt-1">
                             <Card.Title>{name}</Card.Title>
                         </div>
                         <div className="d-flex justify-content-between align-items-center ">
-                            {rating.average ?
+                            {rating?.average ?
                                 <>
                                     <div className="d-flex justify-content-between align-items-center gap-1">
                                         <i className='bx bxs-star star'></i>
-                                        <span>{rating.average}</span>
+                                        <span>{rating?.average}</span>
                                     </div>
                                     <Button variant="#252525"
                                     >
