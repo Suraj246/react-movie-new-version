@@ -7,6 +7,7 @@ import { useQuery } from 'react-query'
 
 
 const Movies = () => {
+    // fetch movie data
     const { isLoading, error, data } = useQuery('movies', () =>
         axios.get('https://api.tvmaze.com/search/shows?q=all')
     )
@@ -24,7 +25,11 @@ const Movies = () => {
                 console.log(item)
                 return (
                     <Card className="movie-card bg-dark text-white p-2" key={idx}>
-                        <Card.Img variant="top" src={image?.medium} />
+                        {image === null ?
+                            <span>image unavailable</span>
+                            :
+                            <Card.Img variant="top" src={image?.medium} />
+                        }
                         <div className="mt-1">
                             <Card.Title>{name}</Card.Title>
                         </div>
